@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function register(){
+            username=document.getElementById("username").value;
+            
+          if(validateName(username)&&validateUser(username)){
+               alert("welcome")
+            }else if(document.getElementById("username").value==""){
+               alert("you are registered")
+            }else if(document.getElementById("password").value==""){
+                alert("enter your password");
+                document.myform.pass.focus();
+            }else if(document.getElementById("phone").value==""){
+                alert("enter phone number");
+                document.myform.phone.focus();
+            }else if(document.getElementById("email").value==""){
+                alert("enter your emailid");
+                document.myform.email.focus();
+            }else{
+               document.myform.uname.focus();
+               document.myform.submit();
+            }
+        }
+        function validateName(username){
+            if(username=='')
+            alert('please enter name')
+        else if(username.length>5^username.length<=15)
+            alert('Name should be greater than 5 and less than 15 ')
+        else
+            return true;
+        }
+        function validateUser(username){
+            userArray=['tom','john','rishi','muskan','sakshi'];
+            flag=true;
+            userArray.forEach(function(elem){
+                if(elem==username){
+                    alert('Username already exists');
+                    flag=false;
+                    return flag;
+                }
+            });
+           
+            if(flag){
+                return flag; 
+            }
+               
+            
+        
+        function validatePassword(password){
+         var res;
+         var str =document.getElementById("t1").value;
+         if(str.match(/[a-z]/g)&&str.match(/[A-Z]/g)&&str.match(/[0-9]/g)&&str.match(/[^a-zA-Z\d]/g)&&str.length>=8)
+         res=true;
+        else
+        res=false;
+        document.getElementById("pass").value=res; 
+        }
+        
+        } 
+        
+            
+        
+       
+        
+           
+ 
+
+        
+
+    </script>
+
+</head>
+<body>
+    <form action="1.html" name="myform">
+        Name<input type="text" id="username" name="uname"><br>
+        password<input type="text" placeholder="abc"id="pass">
+
+        
+        
+        <input type="button" value="Register" onclick="register()">
+        <div id="mydiv"></div>
+    </form>
+    
+    
+</body>
+</html>
+
